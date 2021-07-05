@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 
         if (move.sqrMagnitude > 0)
         {
-            transform.Translate(speed * move * Time.deltaTime);
+            transform.Translate(speed  * move * Time.deltaTime);
             animator.Play("Run");
         }
 
