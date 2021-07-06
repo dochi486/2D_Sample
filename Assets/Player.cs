@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         Move();
 
         if (Input.GetKeyDown(KeyCode.Space))
-            animator.Play("Attack"); //¾îÅÃ¿¡¼­ ÀÚ²Ù Idle·Î °¡¹ö¸®´Â Çö»ó -> ¾Ö´Ï¸ÞÀÌ¼Ç ±æÀÌ ±¸ÇØ¼­ ³¡³ª¸é idleÇÏµµ·Ï
+            animator.Play("Attack"); //ì–´íƒì—ì„œ ìžê¾¸ Idleë¡œ ê°€ë²„ë¦¬ëŠ” í˜„ìƒ -> ì• ë‹ˆë©”ì´ì…˜ ê¸¸ì´ êµ¬í•´ì„œ ëë‚˜ë©´ idleí•˜ë„ë¡
 
         if (move.x >= 0)
             playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
         {
             rigidbody2D.velocity = Vector2.zero;
             rigidbody2D.AddForce(new Vector2(0, jumpForce));
+            animator.Play("Jump");
         }
         else
         {
