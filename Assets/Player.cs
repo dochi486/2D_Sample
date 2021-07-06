@@ -18,9 +18,7 @@ public class Player : MonoBehaviour
     {
         Move();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            animator.Play("Attack"); //어택에서 자꾸 Idle로 가버리는 현상 -> 애니메이션 길이 구해서 끝나면 idle하도록
-
+   
         if (move.x >= 0)
             playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
         else
@@ -29,6 +27,9 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+            animator.Play("Attack"); //어택에서 자꾸 Idle로 가버리는 현상 -> 애니메이션 길이 구해서 끝나면 idle하도록
+
         if (Input.GetKey(KeyCode.A))
             move.x = -1;
         else if (Input.GetKey(KeyCode.D))
