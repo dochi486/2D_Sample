@@ -6,10 +6,13 @@ public class Player : MonoBehaviour
     Animator animator;
     Vector2 move = Vector2.zero;
     public GameObject playerSprite;
+    public float jumpForce = 30;
+    new public Rigidbody2D rigidbody2D;
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+        rigidbody2D = GetComponentInChildren<Rigidbody2D>();
     }
     void Update()
     {
@@ -31,7 +34,10 @@ public class Player : MonoBehaviour
         else if (Input.GetKey(KeyCode.D))
             move.x = 1;
         else if (Input.GetKey(KeyCode.W))
-            move.y = 1; //위로 이동해버리네~ 점프가 아니라~
+        {
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.AddForce(new Vector2(0, jumpForce));
+        }
         else
         {
             animator.Play("Idle");
