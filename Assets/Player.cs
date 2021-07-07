@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,16 @@ public class Player : MonoBehaviour
     public GameObject playerSprite;
     public float jumpForce = 30;
     Rigidbody2D rigid;
+
+
+    public enum PlayerState
+    {
+        Idle,
+        Run,
+        Attack,
+        Jump
+    }
+    public PlayerState playerState = PlayerState.Idle;
 
     private void Awake()
     {
