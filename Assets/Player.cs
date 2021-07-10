@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -6,8 +8,6 @@ public class Player : MonoBehaviour
     Animator animator;
     Vector2 move = Vector2.zero;
     public GameObject playerSprite;
-    public float jumpForce = 30;
-    Rigidbody2D rigid;
 
     public PlayerState state = PlayerState.Idle;
     PlayerState State
@@ -33,7 +33,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        rigid = GetComponentInChildren<Rigidbody2D>();
     }
     void Update()
     {
@@ -43,36 +42,72 @@ public class Player : MonoBehaviour
             playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
         else
             playerSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        Jump();
+
+    }
+
+    private void Jump()
+    {
+   
+            if (State == PlayerState.Jump)
+                return;
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                StartCoroutine(JumpCo());
+            }
+        
+    }
+
+    public AnimationCurve jumpYac;
+    public float jumpYMultiply = 20;
+    public float jumpTimeMultiply = 1;
+
+    private IEnumerator JumpCo()
+    {
+
+
+        State = PlayerState.Jump;
+        float jumpStartTime = Time.time;
+        float jumpDuration = jumpYac[jumpYac.length - 1].time;
+        jumpDuration *= jumpTimeMultiply;
+        float jumpEndTime = jumpStartTime + jumpDuration;
+        float sumEvaluateTime = 0;
+
+        while (Time.time < jumpEndTime)
+        {
+            float y = jumpYac.Evaluate(sumEvaluateTime / jumpTimeMultiply);
+            y *= jumpYMultiply;
+            transform.Translate(0, y, 0);
+            yield return null;
+            sumEvaluateTime += Time.deltaTime;
+
+        }
+        State = PlayerState.Idle;
     }
 
     private void Move()
     {
-        if (state != PlayerState.Idle || state != PlayerState.Run)
+        if (State != PlayerState.Idle || State != PlayerState.Run)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                state = PlayerState.Attack;
+                State = PlayerState.Attack;
             }
         }
         if (Input.GetKey(KeyCode.A))
         {
             move.x = -1;
-            state = PlayerState.Run;
+            State = PlayerState.Run;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             move.x = 1;
-            state = PlayerState.Run;
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            rigid.velocity = Vector2.zero;
-            rigid.AddForce(new Vector2(0, jumpForce));
-            state = PlayerState.Jump;
+            State = PlayerState.Run;
         }
         else
         {
-            state = PlayerState.Idle;
+            State = PlayerState.Idle;
             return;
         }
 
