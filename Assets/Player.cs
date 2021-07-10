@@ -91,29 +91,29 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        if (state != PlayerState.Idle || state != PlayerState.Run)
+        if (State != PlayerState.Idle || State != PlayerState.Run)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                state = PlayerState.Attack;
+                State = PlayerState.Attack;
             }
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             move.x = -1;
-            state = PlayerState.Run;
+            State = PlayerState.Run;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             move.x = 1;
-            state = PlayerState.Run;
+            State = PlayerState.Run;
         }
         else if (Input.GetKey(KeyCode.W))
         {
             rigid.velocity = Vector2.zero;
             rigid.AddForce(new Vector2(0, jumpForce));
-            state = PlayerState.Jump;
+            State = PlayerState.Jump;
         }
         else
         {
