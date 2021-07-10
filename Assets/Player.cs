@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -10,7 +9,19 @@ public class Player : MonoBehaviour
     public float jumpForce = 30;
     Rigidbody2D rigid;
 
+    public PlayerState state = PlayerState.Idle;
+    PlayerState State
+    {
+        get { return state; }
+        set
+        {
+            if (state == value)
+                return;
+            state = value;
+            animator.Play(state.ToString());
 
+        }
+    }
     public enum PlayerState
     {
         Idle,
@@ -18,7 +29,6 @@ public class Player : MonoBehaviour
         Attack,
         Jump
     }
-    public PlayerState playerState = PlayerState.Idle;
 
     private void Awake()
     {
@@ -29,7 +39,6 @@ public class Player : MonoBehaviour
     {
         Move();
 
-   
         if (move.x >= 0)
             playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
         else
@@ -38,29 +47,38 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            animator.Play("Attack"); //어택에서 자꾸 Idle로 가버리는 현상 -> 애니메이션 길이 구해서 끝나면 idle하도록
-
+        if (state != PlayerState.Idle || state != PlayerState.Run)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                state = PlayerState.Attack;
+            }
+        }
         if (Input.GetKey(KeyCode.A))
+        {
             move.x = -1;
+            state = PlayerState.Run;
+        }
         else if (Input.GetKey(KeyCode.D))
+        {
             move.x = 1;
+            state = PlayerState.Run;
+        }
         else if (Input.GetKey(KeyCode.W))
         {
             rigid.velocity = Vector2.zero;
             rigid.AddForce(new Vector2(0, jumpForce));
-            animator.Play("Jump");
+            state = PlayerState.Jump;
         }
         else
         {
-            animator.Play("Idle");
+            state = PlayerState.Idle;
             return;
         }
 
         if (move.sqrMagnitude > 0)
         {
             transform.Translate(speed * move * Time.deltaTime);
-            animator.Play("Run");
         }
     }
 }
