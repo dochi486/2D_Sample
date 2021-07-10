@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
     Animator animator;
     Vector2 move = Vector2.zero;
     public GameObject playerSprite;
-    public float jumpForce = 30;
-    Rigidbody2D rigid;
+    //public float jumpForce = 30;
+    //Rigidbody2D rigid;
 
     public PlayerState state = PlayerState.Idle;
     PlayerState State
@@ -35,14 +35,16 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        rigid = GetComponentInChildren<Rigidbody2D>();
+        //rigid = GetComponentInChildren<Rigidbody2D>();
     }
     void Update()
     {
+        Attack();
         Move();
 
         if (move.x >= 0)
             playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
+
         else
             playerSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
 
@@ -52,14 +54,14 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-   
-            if (State == PlayerState.Jump)
-                return;
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                StartCoroutine(JumpCo());
-            }
-        
+
+        if (State == PlayerState.Jump)
+            return;
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            StartCoroutine(JumpCo());
+        }
+
     }
 
     public AnimationCurve jumpYac;
@@ -68,8 +70,6 @@ public class Player : MonoBehaviour
 
     private IEnumerator JumpCo()
     {
-
-
         State = PlayerState.Jump;
         float jumpStartTime = Time.time;
         float jumpDuration = jumpYac[jumpYac.length - 1].time;
@@ -86,18 +86,14 @@ public class Player : MonoBehaviour
             sumEvaluateTime += Time.deltaTime;
 
         }
+
         State = PlayerState.Idle;
+
     }
 
     private void Move()
     {
-        if (State != PlayerState.Idle || State != PlayerState.Run)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                State = PlayerState.Attack;
-            }
-        }
+
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -109,12 +105,12 @@ public class Player : MonoBehaviour
             move.x = 1;
             State = PlayerState.Run;
         }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            rigid.velocity = Vector2.zero;
-            rigid.AddForce(new Vector2(0, jumpForce));
-            State = PlayerState.Jump;
-        }
+        //else if (Input.GetKey(KeyCode.W))
+        //{
+        //    rigid.velocity = Vector2.zero;
+        //    rigid.AddForce(new Vector2(0, jumpForce));
+        //    State = PlayerState.Jump;
+        //}
         else
         {
             State = PlayerState.Idle;
@@ -125,7 +121,18 @@ public class Player : MonoBehaviour
         {
             transform.Translate(speed * move * Time.deltaTime);
         }
-        else
-            return;
+        //else
+        //    return;
+    }
+
+    private void Attack()
+    {
+        if (State != PlayerState.Idle || State != PlayerState.Run)
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                State = PlayerState.Attack;
+            }
+
     }
 }
