@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -49,14 +48,13 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-   
-            if (State == PlayerState.Jump)
-                return;
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                StartCoroutine(JumpCo());
-            }
-        
+        if (State == PlayerState.Jump)
+            return;
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+
+            StartCoroutine(JumpCo());
+        }
     }
 
     public AnimationCurve jumpYac;
@@ -65,9 +63,6 @@ public class Player : MonoBehaviour
 
     private IEnumerator JumpCo()
     {
-
-
-        State = PlayerState.Jump;
         float jumpStartTime = Time.time;
         float jumpDuration = jumpYac[jumpYac.length - 1].time;
         jumpDuration *= jumpTimeMultiply;
@@ -76,12 +71,12 @@ public class Player : MonoBehaviour
 
         while (Time.time < jumpEndTime)
         {
+            State = PlayerState.Jump;
             float y = jumpYac.Evaluate(sumEvaluateTime / jumpTimeMultiply);
             y *= jumpYMultiply;
             transform.Translate(0, y, 0);
             yield return null;
             sumEvaluateTime += Time.deltaTime;
-
         }
         State = PlayerState.Idle;
     }
@@ -95,6 +90,7 @@ public class Player : MonoBehaviour
                 State = PlayerState.Attack;
             }
         }
+
         if (Input.GetKey(KeyCode.A))
         {
             move.x = -1;
@@ -106,14 +102,13 @@ public class Player : MonoBehaviour
             State = PlayerState.Run;
         }
         else
-        {
             State = PlayerState.Idle;
-            return;
-        }
 
         if (move.sqrMagnitude > 0)
         {
             transform.Translate(speed * move * Time.deltaTime);
         }
+        else
+            return;
     }
 }
