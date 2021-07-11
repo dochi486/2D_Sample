@@ -4415,7 +4415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crankDown: {fileID: 1198585038}
-  range: 5
+  range: 3
   minWorldX: 0
   maxWorldX: 0
-  speed: 5
+  speed: 3

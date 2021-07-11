@@ -5,19 +5,19 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     public GameObject crankDown;
-    SpriteRenderer beeSprite;
-    Animator animator;
+    SpriteRenderer monsterSpriteRenderer;
+    //Animator animator;
 
     private void Awake()
     {
-        beeSprite = GetComponentInChildren<SpriteRenderer>();
-        beeSprite.gameObject.SetActive(false);
+        monsterSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        monsterSpriteRenderer.gameObject.SetActive(false);
     }
     void Update()
     {
         if (crankDown.activeInHierarchy == true)
         {
-            beeSprite.gameObject.SetActive(true);
+            monsterSpriteRenderer.gameObject.SetActive(true);
         }
     }
     public int range = 5;
@@ -34,7 +34,7 @@ public class Monster : MonoBehaviour
 
     IEnumerator Start()
     {
-        animator = GetComponentInChildren<Animator>();
+        //animator = GetComponentInChildren<Animator>();
         minWorldX = transform.position.x - range;
         maxWorldX = transform.position.x + range;
        
@@ -50,7 +50,7 @@ public class Monster : MonoBehaviour
                 {
                     direction = DirectionType.Left;
                     transform.rotation = Quaternion.Euler(0, 180, 0);
-            
+                    monsterSpriteRenderer.transform.rotation = Quaternion.Euler(0, 180, 0);
                 }
             }
             else
@@ -58,7 +58,8 @@ public class Monster : MonoBehaviour
                 if (transform.position.x < minWorldX)
                 {
                     direction = DirectionType.Right;
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    transform.rotation = Quaternion.Euler(Vector3.zero);
+                    monsterSpriteRenderer.transform.rotation = Quaternion.Euler(Vector3.zero);
                 }
             }
 
