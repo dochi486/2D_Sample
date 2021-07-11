@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         else
             playerSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-     
+
 
     }
 
@@ -138,22 +138,15 @@ public class Player : MonoBehaviour
         State = PlayerState.Idle;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
-
-        Monster monster = collision.gameObject.GetComponent<Monster>();
-        if (monster == null || monster.hp <= 0)
+        var monster = collision.gameObject.GetComponent<Monster>();
+        if (monster == null/* || monster.hp <= 0*/)
             return;
-
-
         else
         {
-
-
             hp -= monster.damage;
-            StartCoroutine(HitCo());
-
+            //StartCoroutine(HitCo());
             //if (hp <= 0)
             //{
             //StartCoroutine(DieCo());
@@ -162,12 +155,11 @@ public class Player : MonoBehaviour
         }
     }
     public float delayHit = 0.3f;
-    IEnumerator HitCo()
-    {
-        state = PlayerState.Attacked;
-        animator.Play("Damage");
-
-        yield return new WaitForSeconds(delayHit);
-        state = PlayerState.Idle;
-    }
+    //IEnumerator HitCo()
+    //{
+    //    state = PlayerState.Attacked;
+    //    //animator.Play("Damage");
+    //    yield return new WaitForSeconds(delayHit);
+    //    state = PlayerState.Idle;
+    //}
 }
