@@ -128,12 +128,12 @@ public class Player : MonoBehaviour
         {
             transform.Translate(speed * move * Time.deltaTime);
 
-            if (State != PlayerState.Jump)
+            if (State != PlayerState.Jump && State != PlayerState.Attack)
                 State = PlayerState.Run;
         }
         else
         {
-            if (State != PlayerState.Jump)
+            if (State != PlayerState.Jump && State != PlayerState.Attack)
                 State = PlayerState.Idle;
         }
     }
@@ -141,11 +141,19 @@ public class Player : MonoBehaviour
     private void Attack()
     {
         if (State != PlayerState.Idle || State != PlayerState.Run)
-
+            
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                State = PlayerState.Attack;
+               StartCoroutine(AttackCo());
             }
 
+    }
+
+    public float attackTime = 0.3f;
+    private IEnumerator AttackCo()
+    {
+        State = PlayerState.Attack;
+        yield return new WaitForSeconds(attackTime);
+        State = PlayerState.Idle;
     }
 }
