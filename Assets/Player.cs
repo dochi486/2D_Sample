@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
         {
             if (state == value)
                 return;
+            Debug.LogWarning($"{state} -> {value}로 변함");
+
             state = value;
             animator.Play(state.ToString());
 
@@ -77,11 +79,16 @@ public class Player : MonoBehaviour
         float jumpEndTime = jumpStartTime + jumpDuration;
         float sumEvaluateTime = 0;
 
+        float jumpStartY = transform.position.y;
         while (Time.time < jumpEndTime)
         {
-            float y = jumpYac.Evaluate(sumEvaluateTime / jumpTimeMultiply);
+            float y = jumpYac.Evaluate(sumEvaluateTime / jumpTimeMultiply); 
             y *= jumpYMultiply;
-            transform.Translate(0, y, 0);
+            float currentY = jumpStartY + y;
+            var trPos = transform.position;
+            trPos.y = currentY;
+            transform.position = trPos;
+            //transform.Translate(0, y, 0);
             yield return null;
             sumEvaluateTime += Time.deltaTime;
 
@@ -98,12 +105,12 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             move.x = -1;
-            State = PlayerState.Run;
+            //State = PlayerState.Run;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             move.x = 1;
-            State = PlayerState.Run;
+            //State = PlayerState.Run;
         }
         //else if (Input.GetKey(KeyCode.W))
         //{
@@ -111,18 +118,24 @@ public class Player : MonoBehaviour
         //    rigid.AddForce(new Vector2(0, jumpForce));
         //    State = PlayerState.Jump;
         //}
-        else
-        {
-            State = PlayerState.Idle;
-            return;
-        }
+        //else
+        //{
+        //    State = PlayerState.Idle;
+        //    return;
+        //}
 
         if (move.sqrMagnitude > 0)
         {
             transform.Translate(speed * move * Time.deltaTime);
+
+            if (State != PlayerState.Jump)
+                State = PlayerState.Run;
         }
-        //else
-        //    return;
+        else
+        {
+            if (State != PlayerState.Jump)
+                State = PlayerState.Idle;
+        }
     }
 
     private void Attack()

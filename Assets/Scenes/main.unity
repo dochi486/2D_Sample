@@ -383,8 +383,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  jumpYMultiply: 2
-  jumpTimeMultiply: 0.1
+  jumpYMultiply: 10
+  jumpTimeMultiply: 1
 --- !u!4 &220475917
 Transform:
   m_ObjectHideFlags: 0
