@@ -1179,6 +1179,7 @@ GameObject:
   - component: {fileID: 937713365}
   - component: {fileID: 937713366}
   - component: {fileID: 937713367}
+  - component: {fileID: 937713368}
   m_Layer: 0
   m_Name: Slug
   m_TagString: Monster
@@ -1246,6 +1247,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.69, y: 2.625}
   m_EdgeRadius: 0
+--- !u!50 &937713368
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937713364}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1198585038
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,6 +4483,7 @@ GameObject:
   - component: {fileID: 2080806784}
   - component: {fileID: 2080806785}
   - component: {fileID: 2080806786}
+  - component: {fileID: 2080806787}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Monster
@@ -4518,3 +4541,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.59
+--- !u!50 &2080806787
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080806783}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

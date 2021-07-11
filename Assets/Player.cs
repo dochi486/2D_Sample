@@ -138,32 +138,40 @@ public class Player : MonoBehaviour
         State = PlayerState.Idle;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Monster monster = collision.gameObject.GetComponent<Monster>();
-
-        if (collision.CompareTag("Monster"))
-            hp -= monster.damage;
-
-        //if (monster == null || monster.hp <= 0)
-        //    return;
-        //else
-        //{
-        //    hp -= monster.damage;
-        //    //StartCoroutine(HitCo());
-        //    //if (hp <= 0)
-        //    //{
-        //    //StartCoroutine(DieCo());
-        //    //}
-
-    }
-    }
-    //public float delayHit = 0.3f;
-    //IEnumerator HitCo()
+    //private void OnTriggerEnter2D(Collider2D collision)
     //{
-    //    state = PlayerState.Attacked;
-    //    //animator.Play("Damage");
-    //    yield return new WaitForSeconds(delayHit);
-    //    state = PlayerState.Idle;
+    //    Monster monster = collision.gameObject.GetComponent<Monster>();
+
+    //    if (collision.CompareTag("Monster"))
+    //        hp -= monster.damage;
+
+    //    //if (monster == null || monster.hp <= 0)
+    //    //    return;
+    //    //else
+    //    //{
+    //    //    hp -= monster.damage;
+    //    //    //StartCoroutine(HitCo());
+    //    //    //if (hp <= 0)
+    //    //    //{
+    //    //    //StartCoroutine(DieCo());
+    //    //    //}
+
     //}
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Monster"))
+        {
+            hp--;
+        }
+    }
+}
+//public float delayHit = 0.3f;
+//IEnumerator HitCo()
+//{
+//    state = PlayerState.Attacked;
+//    //animator.Play("Damage");
+//    yield return new WaitForSeconds(delayHit);
+//    state = PlayerState.Idle;
+//}
+
 
