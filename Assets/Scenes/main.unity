@@ -458,6 +458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   playerSprite: {fileID: 175956206}
+  hp: 5
   state: 0
   jumpYac:
     serializedVersion: 2
@@ -962,6 +963,7 @@ GameObject:
   - component: {fileID: 598014645}
   - component: {fileID: 598014644}
   - component: {fileID: 598014643}
+  - component: {fileID: 598014646}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -1053,6 +1055,32 @@ Transform:
   m_Father: {fileID: 937713365}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &598014646
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598014642}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.12, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 2.625}
+    newSize: {x: 4, y: 2.625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.69, y: 2.625}
+  m_EdgeRadius: 0
 --- !u!1 &913690597
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,6 +4251,7 @@ GameObject:
   - component: {fileID: 1494651808}
   - component: {fileID: 1494651807}
   - component: {fileID: 1494651806}
+  - component: {fileID: 1494651809}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -4314,6 +4343,22 @@ Transform:
   m_Father: {fileID: 2080806784}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1494651809
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494651805}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.59
 --- !u!1 &1599166788
 GameObject:
   m_ObjectHideFlags: 0

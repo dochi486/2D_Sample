@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     Animator animator;
     Vector2 move = Vector2.zero;
     public GameObject playerSprite;
+    public int hp = 5;
 
     public PlayerState state = PlayerState.Idle;
     PlayerState State
