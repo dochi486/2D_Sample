@@ -42,13 +42,13 @@ public class Player : MonoBehaviour
     {
         Attack();
         Move();
-
+        Jump();
         if (move.x >= 0)
             playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
         else
             playerSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-        Jump();
+     
 
     }
 
