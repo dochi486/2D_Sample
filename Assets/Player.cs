@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
     private void Move()
     {
 
-
+        move = Vector2.zero;
         if (Input.GetKey(KeyCode.A))
         {
             move.x = -1;
