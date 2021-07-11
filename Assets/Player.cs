@@ -8,8 +8,6 @@ public class Player : MonoBehaviour
     Animator animator;
     Vector2 move = Vector2.zero;
     public GameObject playerSprite;
-    //public float jumpForce = 30;
-    //Rigidbody2D rigid;
 
     public PlayerState state = PlayerState.Idle;
     PlayerState State
@@ -36,7 +34,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        //rigid = GetComponentInChildren<Rigidbody2D>();
     }
     void Update()
     {
@@ -86,7 +83,6 @@ public class Player : MonoBehaviour
             var trPos = transform.position;
             trPos.y = currentY;
             transform.position = trPos;
-            //transform.Translate(0, y, 0);
             yield return null;
             sumEvaluateTime += Time.deltaTime;
         }
@@ -101,24 +97,11 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             move.x = -1;
-            //State = PlayerState.Run;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             move.x = 1;
-            //State = PlayerState.Run;
         }
-        //else if (Input.GetKey(KeyCode.W))
-        //{
-        //    rigid.velocity = Vector2.zero;
-        //    rigid.AddForce(new Vector2(0, jumpForce));
-        //    State = PlayerState.Jump;
-        //}
-        //else
-        //{
-        //    State = PlayerState.Idle;
-        //    return;
-        //}
 
         if (move.sqrMagnitude > 0)
         {
