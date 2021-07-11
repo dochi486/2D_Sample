@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
 
             state = value;
             animator.Play(state.ToString());
-
         }
     }
     public enum PlayerState
@@ -46,7 +45,6 @@ public class Player : MonoBehaviour
 
         if (move.x >= 0)
             playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
-
         else
             playerSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
 
@@ -59,11 +57,11 @@ public class Player : MonoBehaviour
 
         if (State == PlayerState.Jump)
             return;
+
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             StartCoroutine(JumpCo());
         }
-
     }
 
     public AnimationCurve jumpYac;
@@ -82,7 +80,7 @@ public class Player : MonoBehaviour
         float jumpStartY = transform.position.y;
         while (Time.time < jumpEndTime)
         {
-            float y = jumpYac.Evaluate(sumEvaluateTime / jumpTimeMultiply); 
+            float y = jumpYac.Evaluate(sumEvaluateTime / jumpTimeMultiply);
             y *= jumpYMultiply;
             float currentY = jumpStartY + y;
             var trPos = transform.position;
@@ -91,11 +89,9 @@ public class Player : MonoBehaviour
             //transform.Translate(0, y, 0);
             yield return null;
             sumEvaluateTime += Time.deltaTime;
-
         }
 
         State = PlayerState.Idle;
-
     }
 
     private void Move()
@@ -141,10 +137,10 @@ public class Player : MonoBehaviour
     private void Attack()
     {
         if (State != PlayerState.Idle || State != PlayerState.Run)
-            
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
-               StartCoroutine(AttackCo());
+                StartCoroutine(AttackCo());
             }
 
     }
