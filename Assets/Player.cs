@@ -140,21 +140,25 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        var monster = collision.gameObject.GetComponent<Monster>();
-        if (monster == null/* || monster.hp <= 0*/)
-            return;
-        else
-        {
-            hp -= monster.damage;
-            //StartCoroutine(HitCo());
-            //if (hp <= 0)
-            //{
-            //StartCoroutine(DieCo());
-            //}
+        Monster monster = collision.gameObject.GetComponent<Monster>();
 
-        }
+        if (collision.CompareTag("Monster"))
+            hp -= monster.damage;
+
+        //if (monster == null || monster.hp <= 0)
+        //    return;
+        //else
+        //{
+        //    hp -= monster.damage;
+        //    //StartCoroutine(HitCo());
+        //    //if (hp <= 0)
+        //    //{
+        //    //StartCoroutine(DieCo());
+        //    //}
+
     }
-    public float delayHit = 0.3f;
+    }
+    //public float delayHit = 0.3f;
     //IEnumerator HitCo()
     //{
     //    state = PlayerState.Attacked;
@@ -162,4 +166,4 @@ public class Player : MonoBehaviour
     //    yield return new WaitForSeconds(delayHit);
     //    state = PlayerState.Idle;
     //}
-}
+

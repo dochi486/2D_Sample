@@ -496,7 +496,6 @@ MonoBehaviour:
   jumpYMultiply: 30
   jumpTimeMultiply: 1
   attackTime: 0.75
-  delayHit: 0.3
 --- !u!4 &220475917
 Transform:
   m_ObjectHideFlags: 0
@@ -966,7 +965,7 @@ GameObject:
   - component: {fileID: 598014643}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1182,7 +1181,7 @@ GameObject:
   - component: {fileID: 937713367}
   m_Layer: 0
   m_Name: Slug
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4256,7 +4255,7 @@ GameObject:
   - component: {fileID: 1494651806}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4464,7 +4463,7 @@ GameObject:
   - component: {fileID: 2080806786}
   m_Layer: 0
   m_Name: Bee
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
