@@ -17,15 +17,11 @@ public class Monster : MonoBehaviour
     {
         beeSprite.gameObject.SetActive(false);
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (crankDown.activeInHierarchy == true)
         {
             beeSprite.gameObject.SetActive(true);
-            //sprite.SetActive(true);
-            //print("Trap Activated");
         }
     }
 }
