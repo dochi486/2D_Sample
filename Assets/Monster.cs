@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour
+public class Monster :  Crank
 {
     public GameObject crankDown;
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (crankDown.gameObject == isActiveAndEnabled)
+        if (isTrapActivated == true)
         {
             gameObject.SetActive(true);
+            print("Trap Activated");
         }
     }
 }
