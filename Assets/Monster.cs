@@ -24,6 +24,10 @@ public class Monster : MonoBehaviour
     public float minWorldX;
     public float maxWorldX;
     public float speed = 5;
+
+    public int hp = 3;
+    public int damage = 1;
+
     public enum DirectionType
     {
         Right,
@@ -50,7 +54,7 @@ public class Monster : MonoBehaviour
                 {
                     direction = DirectionType.Left;
                     transform.rotation = Quaternion.Euler(0, 180, 0);
-                    monsterSpriteRenderer.transform.rotation = Quaternion.Euler(0, 180, 0);
+                    monsterSpriteRenderer.transform.rotation = Quaternion.Euler(Vector3.zero);
                 }
             }
             else
@@ -59,7 +63,7 @@ public class Monster : MonoBehaviour
                 {
                     direction = DirectionType.Right;
                     transform.rotation = Quaternion.Euler(Vector3.zero);
-                    monsterSpriteRenderer.transform.rotation = Quaternion.Euler(Vector3.zero);
+                    monsterSpriteRenderer.transform.rotation = Quaternion.Euler(0,180,0);
                 }
             }
 
@@ -69,4 +73,5 @@ public class Monster : MonoBehaviour
 
         }
     }
+
 }

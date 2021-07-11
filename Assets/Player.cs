@@ -29,7 +29,8 @@ public class Player : MonoBehaviour
         Idle,
         Run,
         Attack,
-        Jump
+        Jump,
+        Attacked
     }
 
     private void Awake()
@@ -135,5 +136,38 @@ public class Player : MonoBehaviour
         State = PlayerState.Attack;
         yield return new WaitForSeconds(attackTime);
         State = PlayerState.Idle;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+
+        Monster monster = collision.gameObject.GetComponent<Monster>();
+        if (monster == null || monster.hp <= 0)
+            return;
+
+
+        else
+        {
+
+
+            hp -= monster.damage;
+            StartCoroutine(HitCo());
+
+            //if (hp <= 0)
+            //{
+            //StartCoroutine(DieCo());
+            //}
+
+        }
+    }
+    public float delayHit = 0.3f;
+    IEnumerator HitCo()
+    {
+        state = PlayerState.Attacked;
+        animator.Play("Damage");
+
+        yield return new WaitForSeconds(delayHit);
+        state = PlayerState.Idle;
     }
 }
