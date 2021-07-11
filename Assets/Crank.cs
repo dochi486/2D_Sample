@@ -6,15 +6,19 @@ public class Crank : MonoBehaviour
     public GameObject down;
     public GameObject up;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //콜리젼으로 up, down 껐다 키고 싶은데
-
-        //if (collision == gameObject.CompareTag("Player"))
+        //print(collision.transform.name);
+        if (collision.CompareTag("Player"))
+        {
+            down.gameObject.SetActive(true);
+            up.gameObject.SetActive(false);
+        }  
+        //else if (collision.CompareTag("Player"))
         //{
-        //    down.SetActive(true);
-        //    Debug.Log(collision.transform.name);
-        //    up.SetActive(false);
+        //    down.gameObject.SetActive(false);
+        //    up.gameObject.SetActive(true);
         //}
     }
 }
