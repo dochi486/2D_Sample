@@ -646,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chest: {fileID: 2054678873}
+  animationTime: 1.1
 --- !u!1 &431186517
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.4, y: 0, z: -10}
+  m_LocalPosition: {x: 43.2, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1585,7 +1586,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bd59bf2e866ed4529ae645637eb9c11d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5096,12 +5097,12 @@ PrefabInstance:
     - target: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.26
+      value: 28.03
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.5
+      value: -2.81
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}

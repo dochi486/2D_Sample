@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
@@ -16,8 +17,17 @@ public class Gem : MonoBehaviour
     {
         if (chest.activeInHierarchy == true)
         {
-            gem.enabled = true;
-            animator.Play("gem");
+            StartCoroutine(GemFadeCo());
         }
+    }
+    public float animationTime = 0.5f;
+   IEnumerator GemFadeCo()
+    {
+        gem.enabled = true;
+        animator.Play("gem");
+
+        yield return new WaitForSeconds(animationTime);
+        yield return null;
+        this.gameObject.SetActive(false);
     }
 }
