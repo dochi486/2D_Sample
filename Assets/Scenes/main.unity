@@ -731,6 +731,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpStatus5: {fileID: 1633146119}
+  hpStatus4: {fileID: 1931538901}
+  hpStatus3: {fileID: 525191580}
+  hpStatus2: {fileID: 599377564}
+  hpStatus1: {fileID: 2099239121}
 --- !u!1 &380655885
 GameObject:
   m_ObjectHideFlags: 0
