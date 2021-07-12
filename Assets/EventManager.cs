@@ -25,19 +25,19 @@ public class EventManager : MonoBehaviour
 
         switch (Player.instance.hp)
         {
-            case 5:
+            case 4:
                 hpStatus5.enabled = true;
                 break;
-            case 4:
+            case 3:
                 hpStatus5.enabled = false;
                 hpStatus4.enabled = true;
                 break;
-            case 3:
+            case 2:
                 hpStatus3.enabled = true;
                 hpStatus4.enabled = false;
                 hpStatus5.enabled = false;
                 break;
-            case 2:
+            case 1:
                 hpStatus2.enabled = true;
                 hpStatus3.enabled = false;
                 hpStatus4.enabled = false;
