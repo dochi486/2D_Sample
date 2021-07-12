@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     Vector2 move = Vector2.zero;
     public GameObject playerSprite;
     public int hp = 5;
-
+    public static Player instance;
     public PlayerState state = PlayerState.Idle;
     PlayerState State
     {
@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
         animator = GetComponentInChildren<Animator>();
     }
     void Update()

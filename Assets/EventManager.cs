@@ -8,7 +8,6 @@ public class EventManager : MonoBehaviour
     public Image hpStatus3;
     public Image hpStatus2;
     public Image hpStatus1;
-    Player player;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +24,7 @@ public class EventManager : MonoBehaviour
         //    hpStatus5.enabled = true;
         //if(player.hp ==)
 
-        switch (player.hp)
+        switch (Player.instance.hp)
         {
             case 5:
                 hpStatus5.enabled = true;
