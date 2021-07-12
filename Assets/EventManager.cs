@@ -7,11 +7,10 @@ public class EventManager : MonoBehaviour
     public Image hpStatus4;
     public Image hpStatus3;
     public Image hpStatus2;
-    public Image hpStatus1;
+
     // Start is called before the first frame update
     void Start()
     {
-        hpStatus1.enabled = false;
         hpStatus4.enabled = false;
         hpStatus3.enabled = false;
         hpStatus2.enabled = false;
@@ -44,7 +43,6 @@ public class EventManager : MonoBehaviour
                 hpStatus4.enabled = false;
                 hpStatus5.enabled = false;
                 break;
- 
         }
     }
 }
