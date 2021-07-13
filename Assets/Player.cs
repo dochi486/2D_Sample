@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     Animator animator;
     Vector2 move = Vector2.zero;
     public GameObject playerSprite;
-    public int hp = 5;
+    public int hp = 4;
     public static Player instance;
     public PlayerState state = PlayerState.Idle;
     PlayerState State
@@ -30,7 +30,8 @@ public class Player : MonoBehaviour
         Run,
         Attack,
         Jump,
-        Attacked
+        Hurt,
+            Death
     }
 
     private void Awake()
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
         Attack();
         Move();
         Jump();
+
         if (move.x >= 0)
             playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
         else
