@@ -535,6 +535,7 @@ MonoBehaviour:
   hpStatus4: {fileID: 1931538901}
   hpStatus3: {fileID: 525191580}
   hpStatus2: {fileID: 599377564}
+  loadSceneName: GameOver
 --- !u!1 &380655885
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,6 +4940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sign: {fileID: 2127334124}
   text: {fileID: 441175945}
+  animationTime: 0.6
 --- !u!1 &2054678873
 GameObject:
   m_ObjectHideFlags: 0

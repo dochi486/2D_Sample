@@ -7,7 +7,7 @@ public class EventManager : MonoBehaviour
     public Image hpStatus4;
     public Image hpStatus3;
     public Image hpStatus2;
-
+    public string loadSceneName;
     void Start()
     {
         hpStatus4.enabled = false;
@@ -38,11 +38,14 @@ public class EventManager : MonoBehaviour
                 hpStatus4.enabled = false;
                 hpStatus5.enabled = false;
                 break;
+            case 0:
+                UnityEngine.SceneManagement.SceneManager.LoadScene(loadSceneName);
+                break;
         }
 
-        if (Player.instance.hp == 0)
-        {
+        //if (Player.instance.hp == 0)
+        //{
 
-        }
+        //}
     }
 }
