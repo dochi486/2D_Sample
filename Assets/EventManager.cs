@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
@@ -39,13 +41,15 @@ public class EventManager : MonoBehaviour
                 hpStatus5.enabled = false;
                 break;
             case 0:
+                StartCoroutine(GameOverCo());
                 UnityEngine.SceneManagement.SceneManager.LoadScene(loadSceneName);
                 break;
         }
 
-        //if (Player.instance.hp == 0)
-        //{
-
-        //}
+    }
+    public float gameEndTime = 3;
+    IEnumerator GameOverCo()
+    {
+        yield return new WaitForSeconds(gameEndTime);
     }
 }
