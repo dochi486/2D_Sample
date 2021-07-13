@@ -733,6 +733,7 @@ GameObject:
   - component: {fileID: 441175944}
   - component: {fileID: 441175946}
   - component: {fileID: 441175945}
+  - component: {fileID: 441175947}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -856,6 +857,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441175943}
   m_CullTransparentMesh: 1
+--- !u!95 &441175947
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441175943}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01f228744ad348746a7ab8d3ac55afab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,7 +968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.2, y: 0, z: -10}
+  m_LocalPosition: {x: -18.5, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5018,6 +5038,7 @@ GameObject:
   - component: {fileID: 2127334123}
   - component: {fileID: 2127334125}
   - component: {fileID: 2127334124}
+  - component: {fileID: 2127334126}
   m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
@@ -5082,6 +5103,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127334122}
   m_CullTransparentMesh: 1
+--- !u!95 &2127334126
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127334122}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f0b0cbc5fa8151343a17a6a72065c53c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4886165005016608781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5097,12 +5137,12 @@ PrefabInstance:
     - target: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.03
+      value: -17.79
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.81
+      value: -6.65
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
