@@ -536,6 +536,7 @@ MonoBehaviour:
   hpStatus3: {fileID: 525191580}
   hpStatus2: {fileID: 599377564}
   loadSceneName: GameOver
+  gameEndTime: 5
 --- !u!1 &380655885
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,9 +695,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5923ee5b42b19e04c959d10cd9e8e4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  down: {fileID: 1198585038}
-  up: {fileID: 54204299}
-  isTrapActivated: 0
+  objectOff: {fileID: 54204299}
+  objectOn: {fileID: 1198585038}
+  isObjectActivated: 0
 --- !u!61 &431186520
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4712,9 +4713,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a188f5085df61cd499edb35c25b652ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closed: {fileID: 636999154}
-  opened: {fileID: 2054678873}
-  isBoxOpened: 0
+  objectOff: {fileID: 636999154}
+  objectOn: {fileID: 2054678873}
+  isObjectActivated: 0
 --- !u!61 &1879603138
 BoxCollider2D:
   m_ObjectHideFlags: 0
