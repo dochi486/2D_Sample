@@ -7,16 +7,20 @@ public class Monster : MonoBehaviour
     public GameObject crankDown;
     SpriteRenderer monsterSpriteRenderer;
     //Animator animator;
+    new Collider2D collider;
 
     private void Awake()
     {
         monsterSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        collider = GetComponent<Collider2D>();
         monsterSpriteRenderer.gameObject.SetActive(false);
+        collider.gameObject.SetActive(false);
     }
     void Update()
     {
         if (crankDown.activeInHierarchy == true)
         {
+            collider.gameObject.SetActive(true);
             monsterSpriteRenderer.gameObject.SetActive(true);
         }
     }
