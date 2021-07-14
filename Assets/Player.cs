@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         Attack,
         Jump,
         Hurt,
-            Death
+        Death
     }
 
     private void Awake()

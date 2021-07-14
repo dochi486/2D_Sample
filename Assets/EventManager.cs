@@ -47,7 +47,7 @@ public class EventManager : MonoBehaviour
         }
 
     }
-    public float gameEndTime = 3;
+    public float gameEndTime = 5;
     IEnumerator GameOverCo()
     {
         yield return new WaitForSeconds(gameEndTime);
