@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 954487544}
   - component: {fileID: 954487543}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: PersistCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -451,7 +451,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &954487546
 RectTransform:
@@ -484,6 +484,8 @@ GameObject:
   - component: {fileID: 1267566568}
   - component: {fileID: 1267566570}
   - component: {fileID: 1267566569}
+  - component: {fileID: 1267566572}
+  - component: {fileID: 1267566571}
   m_Layer: 5
   m_Name: BlackScreen
   m_TagString: Untagged
@@ -548,6 +550,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267566567}
   m_CullTransparentMesh: 1
+--- !u!225 &1267566571
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267566567}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1267566572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267566567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f470a291a77388a4d903c8ba044690a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1642096518
 GameObject:
   m_ObjectHideFlags: 0
