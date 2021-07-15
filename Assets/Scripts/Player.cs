@@ -62,15 +62,15 @@ public class Player : MonoBehaviour
 
         if (State == PlayerState.Jump)
             return;
-
+                  
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             State = PlayerState.Jump;
+            //점프로.. State변경이 안되는데 점프 모션은 하네?
             //StartCoroutine(JumpCo());
             rigid.velocity = Vector2.zero;
             rigid.AddForce(jumpForce);
-            //점프가 끝나면 Idle하도록 코루틴 ? 
-            //지금은 떨어지면 아이들이랑 런 겹치고 있다.. 
+            //점프 끝난 뒤 움직임 없으면 아이들로 안 바뀌고 점프모션 그대로 멈춰있는데..?
             State = PlayerState.Idle;
         }
     }
