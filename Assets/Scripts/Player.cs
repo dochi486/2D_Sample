@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
         {
             if (state == value)
                 return;
-            //Debug.LogWarning($"{state} -> {value}로 변함");
+            Debug.LogWarning($"{state} -> {value}로 변함");
 
             state = value;
             animator.Play(state.ToString());
@@ -62,17 +62,24 @@ public class Player : MonoBehaviour
 
         if (State == PlayerState.Jump)
             return;
-                  
+
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            State = PlayerState.Jump;
-            //점프로.. State변경이 안되는데 점프 모션은 하네?
-            //StartCoroutine(JumpCo());
-            rigid.velocity = Vector2.zero;
-            rigid.AddForce(jumpForce);
-            //점프 끝난 뒤 움직임 없으면 아이들로 안 바뀌고 점프모션 그대로 멈춰있는데..?
-            State = PlayerState.Idle;
+            StartCoroutine(JumpCo());
         }
+    }
+    public float jumpAnimationTime = 0.5f;
+    IEnumerator JumpCo()
+    {
+        State = PlayerState.Jump;
+        //점프로.. State변경이 안되는데 점프 모션은 하네?
+        //StartCoroutine(JumpCo());
+        rigid.velocity = Vector2.zero;
+        rigid.AddForce(jumpForce);
+
+        yield return new WaitForSeconds(jumpAnimationTime);
+        //점프 끝난 뒤 움직임 없으면 아이들로 안 바뀌고 점프모션 그대로 멈춰있는데..?
+        State = PlayerState.Idle;
     }
 
     //public AnimationCurve jumpYac;
