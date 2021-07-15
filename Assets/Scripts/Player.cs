@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
         {
             if (state == value)
                 return;
-            Debug.LogWarning($"{state} -> {value}로 변함");
+            //Debug.LogWarning($"{state} -> {value}로 변함");
 
             state = value;
             animator.Play(state.ToString());

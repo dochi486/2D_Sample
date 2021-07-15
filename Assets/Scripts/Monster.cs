@@ -14,13 +14,13 @@ public class Monster : MonoBehaviour
         monsterSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
         monsterSpriteRenderer.gameObject.SetActive(false);
-        collider.gameObject.SetActive(false);
+        collider.enabled = false;
     }
     void Update()
     {
         if (crankDown.activeInHierarchy == true)
         {
-            collider.gameObject.SetActive(true);
+            collider.enabled = true;
             monsterSpriteRenderer.gameObject.SetActive(true);
         }
     }
