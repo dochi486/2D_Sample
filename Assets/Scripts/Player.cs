@@ -6,13 +6,14 @@ public class Player : MonoBehaviour
 {
     public float speed = 5f;
     Animator animator;
-    Vector2 move = Vector2.zero;
+    public Vector2 move = Vector2.zero;
     public GameObject playerSprite;
     public int hp = 4;
     public static Player instance;
     public PlayerState state = PlayerState.Idle;
     Rigidbody2D rigid;
     public Vector2 jumpForce = new Vector2(0, 500);
+
     PlayerState State
     {
         get { return state; }
@@ -117,11 +118,11 @@ public class Player : MonoBehaviour
         move = Vector2.zero;
         if (Input.GetKey(KeyCode.A))
         {
-            move.x = -1;
+            move.x -= 1;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            move.x = 1;
+            move.x += 1;
         }
 
         if (move.sqrMagnitude > 0)
