@@ -186,9 +186,16 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Monster"))
         {
-            hp--;
-            State = PlayerState.Hurt;
+            if (hp > 0)
+            {
+                hp--;
+                State = PlayerState.Hurt;
+            }
+            else if (hp <= 0)
+                State = PlayerState.Death;
         }
+
+
     }
 }
 //public float delayHit = 0.3f;
