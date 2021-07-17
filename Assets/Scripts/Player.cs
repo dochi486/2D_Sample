@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public int hp = 4;
     public static Player instance;
     public PlayerState state = PlayerState.Idle;
+    public CurrentDirection currentDirection = CurrentDirection.Left;
     Rigidbody2D rigid;
     public Vector2 jumpForce = new Vector2(0, 500);
 
@@ -36,13 +37,18 @@ public class Player : MonoBehaviour
         Hurt,
         Death
     }
+    public enum CurrentDirection
+    {
+        Left,
+        Right
+    }
 
     private void Awake()
     {
         instance = this;
         animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
-        previousPos = transform.position;
+    
     }
 
     public Vector2 previousPos;
@@ -52,16 +58,16 @@ public class Player : MonoBehaviour
         Move();
         Jump();
 
-        //if (State == PlayerState.Idle)
-        {
-            if (previousPos.x + move.x > previousPos.x)
+        Vector2 CurrentX = transform.position;
+
+        if (previousPos.x  < CurrentX.x)
             {
                 playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
             }
             else
                 playerSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
 
+        previousPos = CurrentX;
 
     }
 
