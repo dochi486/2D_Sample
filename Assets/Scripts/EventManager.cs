@@ -15,6 +15,7 @@ public class EventManager : MonoBehaviour
     public string loadSceneName;
     void Start()
     {
+        healthImages = GetComponentsInChildren<Image>();
         hpStatus4.enabled = false;
         hpStatus3.enabled = false;
         hpStatus2.enabled = false;
