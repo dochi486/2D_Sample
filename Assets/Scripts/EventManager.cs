@@ -7,18 +7,14 @@ public class EventManager : MonoBehaviour
 {
     public Image[] healthImages;
 
-    public Image hpStatus5;
-    public Image hpStatus4;
-    public Image hpStatus3;
-    public Image hpStatus2;
 
     public string loadSceneName;
     void Start()
     {
         healthImages = GetComponentsInChildren<Image>();
-        hpStatus4.enabled = false;
-        hpStatus3.enabled = false;
-        hpStatus2.enabled = false;
+        healthImages[1].enabled = false;
+        healthImages[2].enabled = false;
+        healthImages[3].enabled = false;
     }
 
     void Update()
@@ -27,22 +23,22 @@ public class EventManager : MonoBehaviour
         switch (Player.instance.hp)
         {
             case 4:
-                hpStatus5.enabled = true;
+                healthImages[0].enabled = true;
                 break;
             case 3:
-                hpStatus5.enabled = false;
-                hpStatus4.enabled = true;
+                healthImages[0].enabled = false;
+                healthImages[1].enabled = true;
                 break;
             case 2:
-                hpStatus3.enabled = true;
-                hpStatus4.enabled = false;
-                hpStatus5.enabled = false;
+                healthImages[2].enabled = true;
+                healthImages[0].enabled = false;
+                healthImages[1].enabled = false;
                 break;
             case 1:
-                hpStatus2.enabled = true;
-                hpStatus3.enabled = false;
-                hpStatus4.enabled = false;
-                hpStatus5.enabled = false;
+                healthImages[3].enabled = true;
+                healthImages[0].enabled = false;
+                healthImages[1].enabled = false;
+                healthImages[2].enabled = false;
                 break;
             case 0:
                 StartCoroutine(GameOverCo());

@@ -525,11 +525,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c6b592e35e9204693871344280b421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthImages: []
-  hpStatus5: {fileID: 1633146119}
-  hpStatus4: {fileID: 1931538901}
-  hpStatus3: {fileID: 525191580}
-  hpStatus2: {fileID: 599377564}
+  healthImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   loadSceneName: GameOver
   gameEndTime: 5
 --- !u!4 &367555337 stripped
