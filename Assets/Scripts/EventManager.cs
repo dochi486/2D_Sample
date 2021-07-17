@@ -12,10 +12,7 @@ public class EventManager : MonoBehaviour
     void Start()
     {
         healthImages = GetComponentsInChildren<Image>();
-        //healthImages[1].enabled = false;
-        //healthImages[2].enabled = false;
-        //healthImages[3].enabled = false;
-
+        
     }
 
     void Update()
