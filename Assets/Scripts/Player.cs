@@ -42,18 +42,25 @@ public class Player : MonoBehaviour
         instance = this;
         animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
+        previousPos = transform.position;
     }
+
+    public Vector2 previousPos;
     void Update()
     {
         Attack();
         Move();
         Jump();
 
-        if (move.x >= 0)
-            playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
-        else
-            playerSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
-
+        //if (State == PlayerState.Idle)
+        {
+            if (previousPos.x + move.x > previousPos.x)
+            {
+                playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            else
+                playerSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
 
 
     }
