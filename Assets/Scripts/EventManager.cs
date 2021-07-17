@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
+    public Image[] healthImages;
+
     public Image hpStatus5;
     public Image hpStatus4;
     public Image hpStatus3;
     public Image hpStatus2;
+
     public string loadSceneName;
     void Start()
     {

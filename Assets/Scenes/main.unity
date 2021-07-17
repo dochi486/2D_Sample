@@ -230,7 +230,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5a5e5df0efc5b9c4399d3de6350b19ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -276,12 +276,6 @@ Transform:
   m_Father: {fileID: 431186518}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &175956208 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4886165004908843261, guid: a523e34f1999ef0449795f402103fb22,
-    type: 3}
-  m_PrefabInstance: {fileID: 4886165005016608781}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &228961591
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,12 +525,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c6b592e35e9204693871344280b421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthImages: []
   hpStatus5: {fileID: 1633146119}
   hpStatus4: {fileID: 1931538901}
   hpStatus3: {fileID: 525191580}
   hpStatus2: {fileID: 599377564}
   loadSceneName: GameOver
   gameEndTime: 5
+--- !u!4 &367555337 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
+    type: 3}
+  m_PrefabInstance: {fileID: 4886165005016608781}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &380655885
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,8 +918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d0e62721e731a47916713e45e4ef50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 175956208}
-  lerpSpeed: 1
+  target: {fileID: 367555337}
+  lerpSpeed: 5
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -970,7 +971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.63, y: 0, z: -10}
+  m_LocalPosition: {x: -29.63, y: 0, z: -7.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1423,7 +1424,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5a5e5df0efc5b9c4399d3de6350b19ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5150,7 +5151,7 @@ PrefabInstance:
     - target: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
