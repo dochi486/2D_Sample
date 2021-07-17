@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -45,7 +44,7 @@ public class Monster : MonoBehaviour
         //animator = GetComponentInChildren<Animator>();
         minWorldX = transform.position.x - range;
         maxWorldX = transform.position.x + range;
-       
+
         while (true)
         {
             //direction == DirectionType.Right
@@ -67,7 +66,7 @@ public class Monster : MonoBehaviour
                 {
                     direction = DirectionType.Right;
                     transform.rotation = Quaternion.Euler(Vector3.zero);
-                    monsterSpriteRenderer.transform.rotation = Quaternion.Euler(0,180,0);
+                    monsterSpriteRenderer.transform.rotation = Quaternion.Euler(0, 180, 0);
                 }
             }
 

@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     public int hp = 4;
     public static Player instance;
     public PlayerState state = PlayerState.Idle;
-    public CurrentDirection currentDirection = CurrentDirection.Left;
     Rigidbody2D rigid;
     public Vector2 jumpForce = new Vector2(0, 500);
 
@@ -37,38 +36,21 @@ public class Player : MonoBehaviour
         Hurt,
         Death
     }
-    public enum CurrentDirection
-    {
-        Left,
-        Right
-    }
 
     private void Awake()
     {
         instance = this;
         animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
-    
     }
 
     public Vector2 previousPos;
+    public Vector2 CurrentPos;
     void Update()
     {
         Attack();
         Move();
         Jump();
-
-        Vector2 CurrentX = transform.position;
-
-        if (previousPos.x  < CurrentX.x)
-            {
-                playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
-            }
-            else
-                playerSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
-
-        previousPos = CurrentX;
-
     }
 
     private void Jump()
@@ -150,6 +132,16 @@ public class Player : MonoBehaviour
             if (State != PlayerState.Jump && State != PlayerState.Attack)
                 State = PlayerState.Idle;
         }
+
+        CurrentPos = transform.position;
+
+        if (previousPos.x < CurrentPos.x)
+            playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
+        else if (previousPos.x > CurrentPos.x)
+            playerSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        previousPos = CurrentPos;
+
     }
 
     private void Attack()
@@ -195,6 +187,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Monster"))
         {
             hp--;
+            State = PlayerState.Hurt;
         }
     }
 }
