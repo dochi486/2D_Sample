@@ -31,6 +31,10 @@ public class Monster : MonoBehaviour
     public int hp = 3;
     public int damage = 1;
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
     public enum DirectionType
     {
         Right,
@@ -39,6 +43,7 @@ public class Monster : MonoBehaviour
 
     DirectionType direction = DirectionType.Right;
 
+    
     IEnumerator Start()
     {
         //animator = GetComponentInChildren<Animator>();
