@@ -10,7 +10,8 @@ public class Monster : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponentInChildren<Animator>(true); //꺼져있는 GameObject의 컴포넌트를 get하려면 파라미터로 true를 주면 됨
+        animator = GetComponentInChildren<Animator>(true); 
+        //꺼져있는 GameObject의 컴포넌트를 get하려면 파라미터로 true를 주면 됨
         monsterSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
         monsterSpriteRenderer.gameObject.SetActive(false);
