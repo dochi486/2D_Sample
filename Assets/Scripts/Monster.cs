@@ -5,7 +5,7 @@ public class Monster : MonoBehaviour
 {
     public GameObject crankDown;
     SpriteRenderer monsterSpriteRenderer;
-    //Animator animator;
+    Animator animator;
     new Collider2D collider;
 
     private void Awake()
@@ -14,6 +14,7 @@ public class Monster : MonoBehaviour
         collider = GetComponent<Collider2D>();
         monsterSpriteRenderer.gameObject.SetActive(false);
         collider.enabled = false;
+        animator = GetComponentInChildren<Animator>();
     }
     void Update()
     {
@@ -31,10 +32,21 @@ public class Monster : MonoBehaviour
     public int hp = 3;
     public int damage = 1;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.GetComponent<Player>() == null)
+        {
+            Debug.Log("안 맞았다");
+            return;
+        }
+        else
+        {
+            hp -= Player.instance.power;
+            animator.Play("Hit");
+            //애니메이터가 null인 이유 찾기
+        }
     }
+
     public enum DirectionType
     {
         Right,
@@ -43,7 +55,7 @@ public class Monster : MonoBehaviour
 
     DirectionType direction = DirectionType.Right;
 
-    
+
     IEnumerator Start()
     {
         //animator = GetComponentInChildren<Animator>();

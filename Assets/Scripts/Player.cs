@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public PlayerState state = PlayerState.Idle;
     Rigidbody2D rigid;
     public Vector2 jumpForce = new Vector2(0, 500);
+    public int power = 2;
 
     PlayerState State
     {
