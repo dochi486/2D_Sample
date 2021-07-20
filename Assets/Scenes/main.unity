@@ -531,6 +531,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   loadSceneName: GameOver
+  maxHealth: 4
   gameEndTime: 5
 --- !u!4 &367555337 stripped
 Transform:
@@ -5202,6 +5203,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1476901234}
     m_Modifications:
+    - target: {fileID: 951053754, guid: cd52fed05f211ce4ebd587982a824a81, type: 3}
+      propertyPath: crankDown
+      value: 
+      objectReference: {fileID: 1198585038}
     - target: {fileID: 5260411786222806056, guid: cd52fed05f211ce4ebd587982a824a81,
         type: 3}
       propertyPath: m_RootOrder
@@ -5262,11 +5267,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slug
       objectReference: {fileID: 0}
-    - target: {fileID: 5260411786222806059, guid: cd52fed05f211ce4ebd587982a824a81,
-        type: 3}
-      propertyPath: crankDown
-      value: 
-      objectReference: {fileID: 1198585038}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd52fed05f211ce4ebd587982a824a81, type: 3}
 --- !u!1001 &7914185077330779188
@@ -5276,6 +5276,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1476901234}
     m_Modifications:
+    - target: {fileID: 1650655902, guid: d5277f8d4e25f734e959025a0066b9d8, type: 3}
+      propertyPath: crankDown
+      value: 
+      objectReference: {fileID: 1198585038}
     - target: {fileID: 7914185079008070475, guid: d5277f8d4e25f734e959025a0066b9d8,
         type: 3}
       propertyPath: m_Name
@@ -5336,10 +5340,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7914185079008070581, guid: d5277f8d4e25f734e959025a0066b9d8,
-        type: 3}
-      propertyPath: crankDown
-      value: 
-      objectReference: {fileID: 1198585038}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5277f8d4e25f734e959025a0066b9d8, type: 3}

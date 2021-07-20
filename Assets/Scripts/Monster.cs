@@ -14,7 +14,6 @@ public class Monster : MonoBehaviour
         collider = GetComponent<Collider2D>();
         monsterSpriteRenderer.gameObject.SetActive(false);
         collider.enabled = false;
-        animator = GetComponentInChildren<Animator>();
     }
     void Update()
     {
@@ -39,12 +38,14 @@ public class Monster : MonoBehaviour
             Debug.Log("안 맞았다");
             return;
         }
-        else
+        else if (collision.gameObject.GetComponent<Player>() != null)
         {
             hp -= Player.instance.power;
             animator.Play("Hit");
             //애니메이터가 null인 이유 찾기
         }
+        else
+            animator.Play("Idle");
     }
 
     public enum DirectionType
@@ -58,7 +59,7 @@ public class Monster : MonoBehaviour
 
     IEnumerator Start()
     {
-        //animator = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
         minWorldX = transform.position.x - range;
         maxWorldX = transform.position.x + range;
 

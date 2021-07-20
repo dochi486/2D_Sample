@@ -111,9 +111,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5260411786222806056}
-  - component: {fileID: 5260411786222806059}
   - component: {fileID: 5260411786222806058}
   - component: {fileID: 5260411786222806053}
+  - component: {fileID: 951053754}
   m_Layer: 0
   m_Name: Slug
   m_TagString: Monster
@@ -128,7 +128,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5260411786222806057}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 26.896908, y: -5.2764015, z: 1.8112041}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -136,25 +136,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5260411786222806059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5260411786222806057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22702440b4a2cd84098ed87464bc0933, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crankDown: {fileID: 0}
-  range: 5
-  minWorldX: 0
-  maxWorldX: 0
-  speed: 3
-  hp: 3
-  damage: 1
 --- !u!61 &5260411786222806058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -202,3 +183,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &951053754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260411786222806057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693cb398a7a67b348a440df1a057e6d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crankDown: {fileID: 0}
+  range: 5
+  minWorldX: 0
+  maxWorldX: 0
+  speed: 3
+  hp: 3
+  damage: 1
