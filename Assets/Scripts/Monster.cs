@@ -44,7 +44,7 @@ public class Monster : MonoBehaviour
         {
             hp -= Player.instance.power;
             animator.Play("Hit");
-            //애니메이터가 null인 이유 찾기
+            //애니메이터가 null인 이유 찾기 -> 꺼져있는 오브젝트의 애니메이터를 겟컴포넌트로 가져오려고 해서
         }
         else
             animator.Play("Idle");
