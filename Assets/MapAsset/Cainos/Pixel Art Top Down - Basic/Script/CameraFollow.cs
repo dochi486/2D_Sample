@@ -28,6 +28,7 @@ namespace Cainos.PixelArtTopDown_Basic
             targetPos = target.position + offset;
             transform.position = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
         }
+        //카메라 컨파이너 만들어야 한다. 
 
     }
 }
