@@ -96,5 +96,7 @@ public class Monster : MonoBehaviour
 
         }
     }
+    //공격하는 모션? -> 공격 애니메이션 있는 2D 애셋 몬스터 필요
+    //
 
 }
