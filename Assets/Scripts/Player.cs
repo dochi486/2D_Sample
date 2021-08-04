@@ -18,7 +18,8 @@ public class Player : MonoBehaviour
     //todo: 점프했다가 떨어질 때 조금 더 자연스럽게 고쳐야함
     //todo: 카메라 범위 고정
     //todo: 플레이어 죽고 나서 죽는 모션 끝나는 거 기다렸다가 게임오버 띄우기
-    //todo: 피격 후에 idle로 잠시 멈춰있는 문제 해결
+    //[완료]: 피격 후에 idle로 잠시 멈춰있는 문제 해결 
+
 
     PlayerState State
     {
