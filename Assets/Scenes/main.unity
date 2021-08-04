@@ -5256,7 +5256,7 @@ PrefabInstance:
     - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
       propertyPath: m_Mass
-      value: 8.6523
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
@@ -5266,7 +5266,7 @@ PrefabInstance:
     - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
       propertyPath: m_GravityScale
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133894, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}

@@ -10,22 +10,27 @@ public class Player : MonoBehaviour
     public GameObject playerSprite;
     public int hp = 4;
     public static Player instance;
-    public PlayerState state = PlayerState.Idle;
+    public PlayerState m_state = PlayerState.Idle;
     Rigidbody2D rigid;
     public Vector2 jumpForce = new Vector2(0, 500);
     public int power = 2;
 
+    //todo: 점프했다가 떨어질 때 조금 더 자연스럽게 고쳐야함
+    //todo: 카메라 범위 고정
+    //todo: 플레이어 죽고 나서 죽는 모션 끝나는 거 기다렸다가 게임오버 띄우기
+    //todo: 피격 후에 idle로 잠시 멈춰있는 문제 해결
+
     PlayerState State
     {
-        get { return state; }
+        get { return m_state; }
         set
         {
-            if (state == value)
+            if (m_state == value)
                 return;
             //Debug.LogWarning($"{state} -> {value}로 변함");
 
-            state = value;
-            animator.Play(state.ToString());
+            m_state = value;
+            animator.Play(m_state.ToString());
         }
     }
     public enum PlayerState
@@ -34,8 +39,8 @@ public class Player : MonoBehaviour
         Run,
         Attack,
         Jump,
-        Hurt,
-        Death
+        TakeHit,
+        Die
     }
 
     private void Awake()
@@ -69,13 +74,11 @@ public class Player : MonoBehaviour
     IEnumerator JumpCo()
     {
         State = PlayerState.Jump;
-        //점프로.. State변경이 안되는데 점프 모션은 하네?
-        //StartCoroutine(JumpCo());
+
         rigid.velocity = Vector2.zero;
         rigid.AddForce(jumpForce);
 
         yield return new WaitForSeconds(jumpAnimationTime);
-        //점프 끝난 뒤 움직임 없으면 아이들로 안 바뀌고 점프모션 그대로 멈춰있는데..?
         State = PlayerState.Idle;
     }
 
@@ -149,7 +152,7 @@ public class Player : MonoBehaviour
     {
         if (State != PlayerState.Idle || State != PlayerState.Run)
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 StartCoroutine(AttackCo());
             }
@@ -190,10 +193,12 @@ public class Player : MonoBehaviour
             if (hp > 0)
             {
                 hp--;
-                State = PlayerState.Hurt;
+                State = PlayerState.TakeHit;
             }
             else if (hp <= 0)
-                State = PlayerState.Death;
+                State = PlayerState.Die;
+            else
+                State = PlayerState.Idle;
         }
 
 
