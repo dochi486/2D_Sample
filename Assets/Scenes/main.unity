@@ -989,6 +989,7 @@ GameObject:
   - component: {fileID: 525191579}
   - component: {fileID: 525191581}
   - component: {fileID: 525191580}
+  - component: {fileID: 525191582}
   m_Layer: 5
   m_Name: HP2
   m_TagString: Untagged
@@ -1053,6 +1054,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525191578}
   m_CullTransparentMesh: 1
+--- !u!114 &525191582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525191578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.20392157}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &599377562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1080,7 @@ GameObject:
   - component: {fileID: 599377563}
   - component: {fileID: 599377565}
   - component: {fileID: 599377564}
+  - component: {fileID: 599377566}
   m_Layer: 5
   m_Name: HP1
   m_TagString: Untagged
@@ -1128,6 +1145,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599377562}
   m_CullTransparentMesh: 1
+--- !u!114 &599377566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599377562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.20392157}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &636999154
 GameObject:
   m_ObjectHideFlags: 0
@@ -4604,6 +4636,7 @@ GameObject:
   - component: {fileID: 1633146118}
   - component: {fileID: 1633146120}
   - component: {fileID: 1633146119}
+  - component: {fileID: 1633146121}
   m_Layer: 5
   m_Name: HP4
   m_TagString: Untagged
@@ -4668,6 +4701,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633146117}
   m_CullTransparentMesh: 1
+--- !u!114 &1633146121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633146117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.20392157}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1879603135
 GameObject:
   m_ObjectHideFlags: 0
@@ -4755,6 +4803,7 @@ GameObject:
   - component: {fileID: 1931538900}
   - component: {fileID: 1931538902}
   - component: {fileID: 1931538901}
+  - component: {fileID: 1931538903}
   m_Layer: 5
   m_Name: HP3
   m_TagString: Untagged
@@ -4819,6 +4868,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931538899}
   m_CullTransparentMesh: 1
+--- !u!114 &1931538903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931538899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.20392157}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1997093509
 GameObject:
   m_ObjectHideFlags: 0
@@ -5188,6 +5252,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
+        type: 3}
+      propertyPath: m_Mass
+      value: 8.6523
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133894, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
