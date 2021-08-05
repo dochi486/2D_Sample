@@ -8,29 +8,31 @@ namespace Cainos.PixelArtTopDown_Basic
     public class CameraFollow : MonoBehaviour
     {
         public Transform target;
-        public Vector3 offset;
+        public Vector3 offset; //offset도 필요 없을 것 같긴한데
 
         public BoxCollider2D moveableArea;
 
-        public float minX, maxX, minY, maxY;
+        [SerializeField]float minY, maxY;
 
-
+        
         void Start()
         {
             var camera = GetComponent<Camera>();
 
-            float height = 2f * camera.orthographicSize;
-            float width = height * camera.aspect;
+            float height = camera.orthographicSize;
             target = Player.instance.transform;
 
             offset = target.position - transform.position;
-            offset.x = 0; //플레이어가 가장자리에 있더라도 카메라 위치는 중앙에서 시작?
-            minX = width / 2 + moveableArea.transform.position.x + moveableArea.size.x - moveableArea.size.x / 2;
-            maxX = -width / 2 + moveableArea.transform.position.x + moveableArea.size.x + moveableArea.size.x / 2;
+
+            //카메라의 포지션 y가 박스컬라이더 범위 밖으로 나가지 않게
 
             minY = height / 2 + moveableArea.transform.position.z + moveableArea.size.y - moveableArea.size.y / 2;
             maxY = -height / 2 + moveableArea.transform.position.z + moveableArea.size.y + moveableArea.size.y / 2;
-            //센터에서 x값의 반을 뺀 것이 최소랑.. 더한 게 최대..!에서 시작
+
+            //카메라 포지션 x는 음수 양수 이동 가능
+
+
+
         }
 
         public float lerp = 0.05f;
@@ -39,44 +41,11 @@ namespace Cainos.PixelArtTopDown_Basic
 
             var newPos = target.position - offset;
 
-            newPos.x = Mathf.Min(newPos.x, maxX);
-            newPos.x = Mathf.Max(newPos.x, minX);
-
             newPos.y = Mathf.Min(newPos.y, maxY);
             newPos.y = Mathf.Max(newPos.y, minY);
+
             transform.position = Vector3.Lerp(transform.position, newPos, lerp);
 
         }
-        //    public Transform target;
-        //    public float lerpSpeed = 1.0f;
-
-        //    private Vector3 offset;
-
-        //    private Vector3 targetPos;
-
-        //    private void Start()
-        //    {
-        //        if (target == null) return;
-
-        //        offset = transform.position - target.position;
-        //    }
-
-        //    private void Update()
-        //    {
-        //        if (target == null) return;
-
-        //        targetPos = target.position + offset;
-        //        transform.position = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
-        //    }
-        //    //카메라 컨파이너 만들어야 한다. 
-
-
-        //    //스크린의 width, height를 구하고 
-
-        //    //그 범위 밖으로 이동하지 않도록? 
-
-        //    //카메라의 
-
-        //}
     }
 }
