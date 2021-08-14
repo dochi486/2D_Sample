@@ -50,8 +50,9 @@ MonoBehaviour:
   move: {x: 0, y: 0}
   playerSprite: {fileID: 4886165004908843235}
   hp: 4
-  state: 0
+  m_state: 0
   jumpForce: {x: 0, y: 500}
+  power: 2
   previousPos: {x: 0, y: 0}
   CurrentPos: {x: 0, y: 0}
   jumpAnimationTime: 0.5
@@ -70,12 +71,12 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1.06
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &4886165004796133891
 BoxCollider2D:

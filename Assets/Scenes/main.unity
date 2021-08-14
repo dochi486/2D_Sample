@@ -973,7 +973,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.63, y: 0, z: -7.9}
+  m_LocalPosition: {x: 25.3, y: 0, z: -7.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5349,41 +5349,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
-        type: 3}
-      propertyPath: m_Mass
-      value: 8.6523
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 1.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
-        type: 3}
-      propertyPath: m_UseAutoMass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133894, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
