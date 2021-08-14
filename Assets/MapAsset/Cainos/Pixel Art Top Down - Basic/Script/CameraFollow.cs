@@ -9,9 +9,6 @@ namespace Cainos.PixelArtTopDown_Basic
     {
         public Transform target;
         public Vector3 offset; //offset도 필요 없을 것 같긴한데
-
-        [SerializeField]float minY, maxY;
-
         
         void Start()
         {
