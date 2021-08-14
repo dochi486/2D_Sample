@@ -36,7 +36,7 @@ namespace Cainos.PixelArtTopDown_Basic
         }
 
         public float lerp = 0.05f;
-        void LateUpdate()
+        void Update()
         {
 
             var newPos = target.position - offset;

@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     //todo: 카메라 범위 고정
     //todo: 플레이어 죽고 나서 죽는 모션 끝나는 거 기다렸다가 게임오버 띄우기
     //[완료]: 피격 후에 idle로 잠시 멈춰있는 문제 해결 
+    //todo: 언덕에서 어떻게하면 자연스럽게 이동할지 고민 -> 정 방법이 없으면 언덕 말고 계단으로 맵 수정
 
 
     PlayerState State

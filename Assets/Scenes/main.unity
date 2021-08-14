@@ -5303,12 +5303,12 @@ PrefabInstance:
     - target: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.22
+      value: 35.2
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.99
+      value: -8.26
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133888, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
@@ -5353,16 +5353,36 @@ PrefabInstance:
     - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 8.6523
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
-      propertyPath: m_UseAutoMass
+      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
+      propertyPath: m_AngularDrag
+      value: 1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
+        type: 3}
       propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
+        type: 3}
+      propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133894, guid: a523e34f1999ef0449795f402103fb22,
