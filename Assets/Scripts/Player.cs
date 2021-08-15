@@ -84,6 +84,8 @@ public class Player : MonoBehaviour
         State = PlayerState.Idle;
     }
 
+    //todo: 점프 코루틴 없애고 레이로 땅 판정하게 해보기?
+
     //public AnimationCurve jumpYac;
     //public float jumpYMultiply = 20;
     //public float jumpTimeMultiply = 1;
