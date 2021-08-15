@@ -86,35 +86,6 @@ public class Player : MonoBehaviour
 
     //todo: 점프 코루틴 없애고 레이로 땅 판정하게 해보기?
 
-    //public AnimationCurve jumpYac;
-    //public float jumpYMultiply = 20;
-    //public float jumpTimeMultiply = 1;
-
-    //private IEnumerator JumpCo()
-    //{
-    //    State = PlayerState.Jump;
-    //    float jumpStartTime = Time.time;
-    //    float jumpDuration = jumpYac[jumpYac.length - 1].time;
-    //    jumpDuration *= jumpTimeMultiply;
-    //    float jumpEndTime = jumpStartTime + jumpDuration;
-    //    float sumEvaluateTime = 0;
-
-    //    float jumpStartY = transform.position.y;
-    //    while (Time.time < jumpEndTime)
-    //    {
-    //        float y = jumpYac.Evaluate(sumEvaluateTime / jumpTimeMultiply);
-    //        y *= jumpYMultiply;
-    //        float currentY = jumpStartY + y;
-    //        var trPos = transform.position;
-    //        trPos.y = currentY;
-    //        transform.position = trPos;
-    //        yield return null;
-    //        sumEvaluateTime += Time.deltaTime;
-    //    }
-
-    //    State = PlayerState.Idle;
-    //}
-
     private void Move()
     {
 
@@ -171,25 +142,6 @@ public class Player : MonoBehaviour
         State = PlayerState.Idle;
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    Monster monster = collision.gameObject.GetComponent<Monster>();
-
-    //    if (collision.CompareTag("Monster"))
-    //        hp -= monster.damage;
-
-    //    //if (monster == null || monster.hp <= 0)
-    //    //    return;
-    //    //else
-    //    //{
-    //    //    hp -= monster.damage;
-    //    //    //StartCoroutine(HitCo());
-    //    //    //if (hp <= 0)
-    //    //    //{
-    //    //    //StartCoroutine(DieCo());
-    //    //    //}
-
-    //}
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Monster"))
@@ -208,13 +160,4 @@ public class Player : MonoBehaviour
 
     }
 }
-//public float delayHit = 0.3f;
-//IEnumerator HitCo()
-//{
-//    state = PlayerState.Attacked;
-//    //animator.Play("Damage");
-//    yield return new WaitForSeconds(delayHit);
-//    state = PlayerState.Idle;
-//}
-
 
