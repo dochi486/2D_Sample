@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
         if (State == PlayerState.Jump)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             StartCoroutine(JumpCo());
         }
