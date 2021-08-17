@@ -35,6 +35,7 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //단순한 TriggerEnter에서 FSM으로 변환해야함
         if (collision.gameObject.GetComponent<Player>() == null)
         {
             Debug.Log("안 맞았다");
