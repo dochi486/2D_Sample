@@ -6617,26 +6617,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -47.347
       objectReference: {fileID: 0}
-    - target: {fileID: 4886165004796133889, guid: a523e34f1999ef0449795f402103fb22,
-        type: 3}
-      propertyPath: jumpForce.y
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886165004796133890, guid: a523e34f1999ef0449795f402103fb22,
-        type: 3}
-      propertyPath: m_UseAutoMass
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886165004796133891, guid: a523e34f1999ef0449795f402103fb22,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4886165004796133894, guid: a523e34f1999ef0449795f402103fb22,
         type: 3}
       propertyPath: m_Name
