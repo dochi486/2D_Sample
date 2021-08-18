@@ -8,7 +8,9 @@ public class EventManager : MonoBehaviour
 
 
     public string loadSceneName;
+    public string pauseScene;
     public int maxHealth = 4;
+
     void Start()
     {
         healthImages = GetComponentsInChildren<Image>();
@@ -20,6 +22,9 @@ public class EventManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            UnityEngine.SceneManagement.SceneManager.LoadScene(pauseScene);
+
         if (Player.instance.hp == 0)
         {
             StartCoroutine(GameOverCo()); // <- 실행 안됨( 이유 : 밑에 있는 UnityEngine.SceneManagement.SceneManager.LoadScene(loadSceneName); 로직이 실행되어서 현재 씬이 파괴될때 gameObject도 같이 파괴됨)
