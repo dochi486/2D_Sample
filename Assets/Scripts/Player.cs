@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 
 using UnityEngine;
 
@@ -11,6 +12,14 @@ public class Player : MonoBehaviour
     public int hp = 4;
     public static Player instance;
     public PlayerState m_state = PlayerState.Idle;
+
+    internal void OnHit(Collider other)
+    {
+        var monster = other.GetComponent<Monster>();
+        //monster.
+        //AttackCollider로 몬스터 피격 판정하려면 몬스터 스크립트 피격 부분 구조 바꿔야함
+    }
+
     Rigidbody2D rigid;
     public Vector2 jumpForce = new Vector2(0, 500);
     public int power = 2;
