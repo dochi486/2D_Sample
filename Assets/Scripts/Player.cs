@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         {
             if (m_state == value)
                 return;
-            //Debug.LogWarning($"{state} -> {value}로 변함");
+            Debug.LogWarning($"{m_state} -> {value}로 변함");
 
             m_state = value;
             animator.Play(m_state.ToString());
