@@ -12,23 +12,22 @@ public class AttackRange : MonoBehaviour
     //}
     void OnTriggerEnter2D(Collider2D collision)
     {
-        int hp = Player.instance.hp;
-        PlayerState State = Player.instance.State;
+        
         if (collision.CompareTag("Monster"))
         {
-            if (hp > 0)
+            if (Player.instance.hp > 0)
             {
-                hp--;
-                State = PlayerState.TakeHit;
+                Player.instance.hp--;
+                Player.instance.State = PlayerState.TakeHit;
             }
-            else if (hp <= 0)
-                State = PlayerState.Die;
+            else if (Player.instance.hp <= 0)
+                Player.instance.State = PlayerState.Die;
             else
-                State = PlayerState.Idle;
+                Player.instance.State = PlayerState.Idle;
         }
         else
         {
-            print("안 맞았다");
+            print($"{collision.name}");
         }
 
     }

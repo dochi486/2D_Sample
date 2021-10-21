@@ -7,7 +7,7 @@ public class Monster : MonoBehaviour
     SpriteRenderer monsterSpriteRenderer;
     Animator animator;
     new Collider2D collider;
-
+    
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>(true); 
@@ -59,7 +59,6 @@ public class Monster : MonoBehaviour
 
     DirectionType direction = DirectionType.Right;
 
-
     IEnumerator Start()
     {
     
@@ -98,6 +97,9 @@ public class Monster : MonoBehaviour
         }
     }
     //공격하는 모션? -> 공격 애니메이션 있는 2D 애셋 몬스터 필요
-    //
+    public void OnDie()
+    {
+
+    }
 
 }
