@@ -25,7 +25,7 @@ public class Monster : MonoBehaviour
             monsterSpriteRenderer.gameObject.SetActive(true);
         }
 
-        if (hp >= 0)
+        if (hp <= 0)
             OnDie();
     }
     public int range = 5;
@@ -103,7 +103,7 @@ public class Monster : MonoBehaviour
     public void OnDie()
     {
         animator.Play("Die"); //Die노드 만들어야함 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
 }
