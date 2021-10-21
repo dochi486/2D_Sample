@@ -112,7 +112,8 @@ public class Player : MonoBehaviour
 
         if (move.sqrMagnitude > 0)
         {
-            transform.Translate(speed * move * Time.deltaTime);
+            UpdateRotation(move.x);
+            transform.Translate(speed * move * Time.deltaTime, Space.World);
 
             if (State != PlayerState.Jump && State != PlayerState.Attack)
                 State = PlayerState.Run;
@@ -123,16 +124,24 @@ public class Player : MonoBehaviour
                 State = PlayerState.Idle;
         }
 
-        currentPos = transform.position;
+        //currentPos = transform.position;
 
-        if (previousPos.x < currentPos.x)
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        else if (previousPos.x > currentPos.x)
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        //여기서 playersprite를 돌려줬었는데 그걸 transform rotation으로 하니까 버그 생김..
+        //if (previousPos.x < currentPos.x)
+        //    transform.rotation = Quaternion.Euler(0, 180, 0);
+        //else if (previousPos.x > currentPos.x)
+        //    transform.rotation = Quaternion.Euler(0, 0, 0);
+        ////여기서 playersprite를 돌려줬었는데 그걸 transform rotation으로 하니까 버그 생김..
 
-        previousPos = currentPos;
+        //previousPos = currentPos;
 
+    }
+
+    private void UpdateRotation(float currentMove)
+    {
+        if (currentMove == 0)
+            return;
+
+        transform.rotation = Quaternion.Euler(0, currentMove < 0 ? 0 : 180, 0);
     }
 
     private void Attack()
