@@ -152,16 +152,39 @@ public class Player : MonoBehaviour
         attackCollider.SetActive(true);
         yield return new WaitForSeconds(attackTime);
         State = PlayerState.Idle;
+        attackCollider.SetActive(false);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.transform.CompareTag("Monster"))
+    //    {
+    //        if (hp > 0)
+    //        {
+    //            hp--;
+    //            State = PlayerState.TakeHit;
+    //        }
+    //        else if (hp <= 0)
+    //            State = PlayerState.Die;
+    //        else
+    //            State = PlayerState.Idle;
+    //    }
+    //    else
+    //    {
+    //        print($"{collision.transform.name}");
+    //        //CollisionEnter제대로 안되고 있음
+    //        //공격할 때만 Range를 키도록
+    //    }
+    //}
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.CompareTag("Monster"))
+        if (collision.CompareTag("Monster"))
         {
             if (hp > 0)
             {
                 hp--;
                 State = PlayerState.TakeHit;
+                animator.Play("TakeHit");
             }
             else if (hp <= 0)
                 State = PlayerState.Die;
@@ -170,11 +193,9 @@ public class Player : MonoBehaviour
         }
         else
         {
-            print($"{collision.transform.name}");
-            //CollisionEnter제대로 안되고 있음
-            //공격할 때만 Range를 키도록
+            print($"{collision.name}");
         }
+        //피격, 죽는 부분 다시
     }
-
 }
 
