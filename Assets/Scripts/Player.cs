@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public int hp = 4;
     public static Player instance;
     public PlayerState m_state = PlayerState.Idle;
+    public GameObject attackCollider;
 
     //internal void OnHit(Collider other)
     //{
@@ -148,6 +149,7 @@ public class Player : MonoBehaviour
     private IEnumerator AttackCo()
     {
         State = PlayerState.Attack;
+        attackCollider.SetActive(true);
         yield return new WaitForSeconds(attackTime);
         State = PlayerState.Idle;
     }
