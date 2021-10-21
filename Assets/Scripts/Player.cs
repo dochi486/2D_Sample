@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 
 using UnityEngine;
 
@@ -171,6 +170,7 @@ public class Player : MonoBehaviour
         {
             print($"{collision.transform.name}");
             //CollisionEnter제대로 안되고 있음
+            //공격할 때만 Range를 키도록
         }
     }
 

@@ -10,9 +10,9 @@ public class AttackRange : MonoBehaviour
     //        return;
     //    GetComponentInParent<Player>().OnHit(other);
     //}
-    //void OnTriggerEnter2D(Collider2D collision)
-    //{
-        
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+
         //if (collision.CompareTag("Monster"))
         //{
         //    if (Player.instance.hp > 0)
@@ -30,5 +30,5 @@ public class AttackRange : MonoBehaviour
         //    print($"{collision.name}");
         //}
         //피격, 죽는 부분 다시 
-    //}
+    }
 }
