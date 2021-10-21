@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
     }
 
     public Vector2 previousPos;
-    public Vector2 CurrentPos;
+    public Vector2 currentPos;
     void Update()
     {
         Attack();
@@ -123,14 +123,15 @@ public class Player : MonoBehaviour
                 State = PlayerState.Idle;
         }
 
-        CurrentPos = transform.position;
+        currentPos = transform.position;
 
-        if (previousPos.x < CurrentPos.x)
-            playerSprite.transform.rotation = Quaternion.Euler(0, 180, 0);
-        else if (previousPos.x > CurrentPos.x)
-            playerSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (previousPos.x < currentPos.x)
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        else if (previousPos.x > currentPos.x)
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        //여기서 playersprite를 돌려줬었는데 그걸 transform rotation으로 하니까 버그 생김..
 
-        previousPos = CurrentPos;
+        previousPos = currentPos;
 
     }
 
