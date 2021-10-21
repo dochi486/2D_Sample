@@ -29,6 +29,6 @@ public class AttackRange : MonoBehaviour
         {
             print($"{collision.name}");
         }
-
+        //피격, 죽는 부분 다시 
     }
 }
