@@ -124,16 +124,6 @@ public class Player : MonoBehaviour
                 State = PlayerState.Idle;
         }
 
-        //currentPos = transform.position;
-
-        //if (previousPos.x < currentPos.x)
-        //    transform.rotation = Quaternion.Euler(0, 180, 0);
-        //else if (previousPos.x > currentPos.x)
-        //    transform.rotation = Quaternion.Euler(0, 0, 0);
-        ////여기서 playersprite를 돌려줬었는데 그걸 transform rotation으로 하니까 버그 생김..
-
-        //previousPos = currentPos;
-
     }
 
     private void UpdateRotation(float currentMove)
@@ -163,6 +153,25 @@ public class Player : MonoBehaviour
         State = PlayerState.Idle;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Monster"))
+        {
+            if (hp > 0)
+            {
+                hp--;
+                State = PlayerState.TakeHit;
+            }
+            else if (hp <= 0)
+                State = PlayerState.Die;
+            else
+                State = PlayerState.Idle;
+        }
+        else
+        {
+            print($"{collision.transform.name}");
+        }
+    }
 
 }
 
