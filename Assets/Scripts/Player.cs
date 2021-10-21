@@ -170,6 +170,7 @@ public class Player : MonoBehaviour
         else
         {
             print($"{collision.transform.name}");
+            //CollisionEnter제대로 안되고 있음
         }
     }
 
