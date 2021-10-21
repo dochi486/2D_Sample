@@ -3,6 +3,16 @@ using System.Collections;
 
 using UnityEngine;
 
+public enum PlayerState
+{
+    Idle,
+    Run,
+    Attack,
+    Jump,
+    TakeHit,
+    Die
+}
+
 public class Player : MonoBehaviour
 {
     public float speed = 5f;
@@ -13,12 +23,12 @@ public class Player : MonoBehaviour
     public static Player instance;
     public PlayerState m_state = PlayerState.Idle;
 
-    internal void OnHit(Collider other)
-    {
-        var monster = other.GetComponent<Monster>();
-        //monster.
-        //AttackCollider로 몬스터 피격 판정하려면 몬스터 스크립트 피격 부분 구조 바꿔야함
-    }
+    //internal void OnHit(Collider other)
+    //{
+    //    var monster = other.GetComponent<Monster>();
+    //    //monster.
+    //    //AttackCollider로 몬스터 피격 판정하려면 몬스터 스크립트 피격 부분 구조 바꿔야함
+    //}
 
     Rigidbody2D rigid;
     public Vector2 jumpForce = new Vector2(0, 500);
@@ -31,7 +41,7 @@ public class Player : MonoBehaviour
     //todo: 언덕에서 어떻게하면 자연스럽게 이동할지 고민 -> 정 방법이 없으면 언덕 말고 계단으로 맵 수정
 
 
-    PlayerState State
+    internal PlayerState State
     {
         get { return m_state; }
         set
@@ -44,15 +54,7 @@ public class Player : MonoBehaviour
             animator.Play(m_state.ToString());
         }
     }
-    public enum PlayerState
-    {
-        Idle,
-        Run,
-        Attack,
-        Jump,
-        TakeHit,
-        Die
-    }
+
 
     private void Awake()
     {
@@ -151,22 +153,6 @@ public class Player : MonoBehaviour
         State = PlayerState.Idle;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Monster"))
-        {
-            if (hp > 0)
-            {
-                hp--;
-                State = PlayerState.TakeHit;
-            }
-            else if (hp <= 0)
-                State = PlayerState.Die;
-            else
-                State = PlayerState.Idle;
-        }
 
-
-    }
 }
 
