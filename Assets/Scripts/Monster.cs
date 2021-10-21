@@ -24,6 +24,9 @@ public class Monster : MonoBehaviour
             collider.enabled = true;
             monsterSpriteRenderer.gameObject.SetActive(true);
         }
+
+        if (hp >= 0)
+            OnDie();
     }
     public int range = 5;
     public float minWorldX;
@@ -99,7 +102,8 @@ public class Monster : MonoBehaviour
     //공격하는 모션? -> 공격 애니메이션 있는 2D 애셋 몬스터 필요
     public void OnDie()
     {
-
+        animator.Play("Die"); //Die노드 만들어야함 
+        Destroy(gameObject);
     }
 
 }
