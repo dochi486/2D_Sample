@@ -180,7 +180,7 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Monster"))
         {
-            if (hp > 0)
+            if (hp > 0 && State != PlayerState.Attack)
             {
                 hp--;
                 State = PlayerState.TakeHit;
@@ -188,8 +188,8 @@ public class Player : MonoBehaviour
             }
             else if (hp <= 0)
                 State = PlayerState.Die;
-            else
-                State = PlayerState.Idle;
+            else if(State == PlayerState.Attack)
+                return;
         }
         else
         {

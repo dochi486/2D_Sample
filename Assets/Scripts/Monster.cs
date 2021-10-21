@@ -104,6 +104,7 @@ public class Monster : MonoBehaviour
     {
         animator.Play("Die"); //Die노드 만들어야함 
         //Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 }
